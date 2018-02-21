@@ -10,7 +10,6 @@ services:
       POSTGRES_USER:     stellar
       POSTGRES_DB:       coredb
       POSTGRES_PASSWORD: password
-    network_mode: "host"
     networks:
       - default
 
@@ -27,7 +26,6 @@ services:
       POSTGRES_PASSWORD: password
       TESTNET:           1
       CORE_DB_DSN:       "postgresql://dbname=coredb host=stellarpostgres user=stellar password=password sslmode=disable"
-    network_mode: "host"
     networks:
       - default
 
@@ -49,6 +47,5 @@ services:
       HORIZON_DB_DSN:    "postgres://stellar:password@stellarpostgres/horizondb?sslmode=disable"
     ports:
       - "8000:8000"
-    network_mode: "host"
     networks:
       - default
