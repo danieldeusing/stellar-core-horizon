@@ -1,7 +1,7 @@
 FROM golang:stretch as builder
 
-ENV HORIZON_VERSION 0.14.0rc2
-ENV HORIZON_TAG horizon-v0.14.0rc2
+ENV HORIZON_VERSION 0.14.0
+ENV HORIZON_TAG horizon-v0.14.0
 
 ENV BUILD_FROM_SRC 0
 
