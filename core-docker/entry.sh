@@ -41,6 +41,7 @@ function init_stellar_core() {
   fi
 
   stellar-core --conf $CORE_CONFIG --newdb
+  stellar-core  --newhist local
 
   touch $STELLAR_HOME/.core-initialized
 }
