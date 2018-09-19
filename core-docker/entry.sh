@@ -24,9 +24,13 @@ function main() {
     sleep 1
   done
 
-  build-config /configs/stellar.cfg > $STELLAR_HOME/stellar.cfg
-  build-config /configs/stellar-testnet.cfg > $STELLAR_HOME/stellar-testnet.cfg
-
+  if [ -f $STELLAR_HOME/stellar.env ]
+  then
+    echo "stellar.env: already exists, skipping"
+  else
+    build-config /configs/stellar.cfg > $STELLAR_HOME/stellar.cfg
+    build-config /configs/stellar-testnet.cfg > $STELLAR_HOME/stellar-testnet.cfg
+  fi
 
   init_stellar_core
 
