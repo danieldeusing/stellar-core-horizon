@@ -24,8 +24,13 @@ function main() {
     sleep 1
   done
 
-  build-config /configs/horizon.env > $STELLAR_HOME/horizon.env
-  build-config /configs/horizon-testnet.env > $STELLAR_HOME/horizon-testnet.env
+  if [ -f $STELLAR_HOME/horizon.env ]
+  then
+    echo "horizon.env: already exists, skipping"
+  else
+    build-config /configs/horizon.env > $STELLAR_HOME/horizon.env
+    build-config /configs/horizon-testnet.env > $STELLAR_HOME/horizon-testnet.env
+  fi
 
   init_horizon
 
