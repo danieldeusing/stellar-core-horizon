@@ -15,6 +15,8 @@ RUN /install.sh
 # -----------------------
 FROM ubuntu:latest
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 COPY --from=builder /usr/local/bin/stellar-core /usr/local/bin/stellar-core
 
 ADD dependencies /
